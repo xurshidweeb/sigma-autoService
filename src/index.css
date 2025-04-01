@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+.container {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+}
+*{
+  scroll-behavior:smooth;
+  transition: all 0.4s ease-in-out;
+}

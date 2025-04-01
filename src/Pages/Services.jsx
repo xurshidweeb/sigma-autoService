@@ -1,0 +1,82 @@
+import React from "react";
+import { FaArrowRight } from "react-icons/fa";
+import about from "../assets/about.jpg";
+
+function Services() {
+  return (
+    <div id="services" className="mt-15">
+      <div className="container px-10 flex flex-col lg:flex-row justify-between items-start w-full">
+        {/* Rasmdagi blok */}
+        <div className="relative w-full md:w-4/5 lg:w-[500px] mx-auto lg:mx-0">
+          <img src={about} alt="" className="object-cover w-full h-[600px]" />
+          <div className="absolute right-[-20px] top-[-20px] text-3xl text-white font-medium w-[150px] p-4 bg-black/25">
+            <span className="text-5xl">15</span> Лет Опыт
+          </div>
+        </div>
+
+        {/* Matnli blok */}
+        <div className="lg:w-1/2 w-full mt-8 lg:mt-0">
+          <p className="text-red-500 pb-3">// О Нас //</p>
+          <h2 className="text-3xl font-bold">
+            <span className="text-red-500">Sigma Avtoservis</span> - Лучшее
+            Место Для Ухода За Вашим Авто
+          </h2>
+          <p className="mt-4 text-gray-700">
+            Мы предоставляем высококачественные услуги по ремонту автомобилей с
+            многолетним опытом и профессионализмом.
+          </p>
+
+          {/* Xizmatlar bo‘limi */}
+          <div className="flex items-start gap-4 mt-6">
+            <div className="text-xl font-bold text-blue-600 bg-black/10 px-2 py-1">
+              01
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">
+                Профессионалы и Эксперты
+              </h3>
+              <p className="text-gray-600">
+                Наши специалисты обладают высоким уровнем квалификации и
+                профессионализма.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4 mt-6">
+            <div className="text-xl font-bold text-blue-600 bg-black/10 px-2 py-1">
+              02
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">
+                Качественный Сервисный Центр
+              </h3>
+              <p className="text-gray-600">
+                Мы гарантируем высокое качество обслуживания каждого клиента.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4 mt-6">
+            <div className="text-xl font-bold text-blue-600 bg-black/10 px-2 py-1">
+              03
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Награжденные Работники</h3>
+              <p className="text-gray-600">
+                Наши сотрудники удостоены многочисленных наград за свою работу.
+              </p>
+            </div>
+          </div>
+
+          {/* Qo‘ng‘iroq tugmasi */}
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 text-white bg-red-500 px-10 py-3 font-semibold mt-6"
+          >
+            Qo'ng'iroq <FaArrowRight />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Services;
