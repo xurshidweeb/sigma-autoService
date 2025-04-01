@@ -20,7 +20,7 @@ import { RiTelegramLine } from "react-icons/ri";
 function Footer() {
   return (
     <div
-      className="footer-container"
+      className="footer-container mt-20"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(${bg})`,
         backgroundSize: "cover",
