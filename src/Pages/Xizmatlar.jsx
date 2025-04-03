@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { FaCar, FaTools, FaOilCan, FaCogs } from "react-icons/fa";
+import { FaCar, FaTools, FaOilCan, FaCogs, FaCheck, FaArrowRight } from "react-icons/fa";
 import service1 from "../assets/service-1.jpg";
 import service2 from "../assets/service-2.jpg";
 import service3 from "../assets/service-3.jpg";
 import service4 from "../assets/service-4.jpg";
+import "aos/dist/aos.css";
+import Modal from "../Components/Modal";
 
 const services = [
   {
@@ -58,6 +60,10 @@ const services = [
 
 function Xizmatlar() {
   const [selectedService, setSelectedService] = useState(services[0]);
+  const [modal, setModal] = useState();
+  const openModal = () => {
+    setModal(!modal);
+  };
 
   return (
     <div id="xizmatlar" className="container flex flex-col md:flex-row p-5 gap-5">
@@ -65,7 +71,7 @@ function Xizmatlar() {
         {services.map((service) => (
           <button
             key={service.id}
-            className={`flex items-center gap-2 p-5 text-left text-3xl transition-all ${
+            className={`flex items-center gap-2 p-5 text-left text-[20px] font-bold transition-all ${
               selectedService.id === service.id
                 ? "bg-red-600 text-white"
                 : "bg-gray-200 text-black"
@@ -90,15 +96,42 @@ function Xizmatlar() {
           <ul className="mt-4 space-y-2">
             {selectedService.benefits.map((benefit, index) => (
               <li key={index} className="flex items-center gap-2">
-                ✅ {benefit}
+                <FaCheck className="text-green-600" />
+                {benefit}
               </li>
             ))}
           </ul>
-          <button className="mt-5 px-5 py-2 bg-red-600 text-white  shadow-md w-full md:w-auto">
-            ПОЗВОНИТЬ ➡
+          <button onClick={openModal} className="mt-5 px-5 py-3 bg-red-600 text-white flex items-center gap-2  shadow-md w-full md:w-auto">
+            ПОЗВОНИТЬ 
+            <FaArrowRight className="text-white" />
           </button>
         </div>
       </div>
+      {modal ? (
+            <Modal>
+              <div className="bg-white my-auto mx-auto w-auto  p-5 pb-3 flex flex-col items-center rounded-2xl">
+                <h2 className="text-2xl font-bold text-center text-gray-700">Вызвать мастера</h2>
+                <p className="text-center text-gray-600 py-3">Чтобы связаться с администратором,
+                  <br />
+                  позвоните по этому номеру.</p>
+                  <h3 className="text-xl text-red-500 font-medium">+998971711118</h3>
+                
+                <div className=" flex gap-5 items-center justify-between">
+                  
+                  <button
+                    onClick={openModal}
+                    className="px-2 py-1 mt-2 rounded-sm text-white bg-red-500 hover:bg-red-600 active:scale-105 w-22 flex justify-center"
+                  >
+                    Отменить
+                  </button>
+
+                  <a href="tel:+998971711118" className="px-2 py-1 mt-2 rounded-sm text-white bg-emerald-700 hover:bg-emerald-800 active:scale-70 duration-100 w-22 flex justify-center">Связь</a>
+                </div>
+              </div>
+            </Modal>
+          ) : (
+            ""
+          )}
     </div>
   );
 }

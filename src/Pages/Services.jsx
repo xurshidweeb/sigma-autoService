@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import about from "../assets/about.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Modal from "../Components/Modal";
 
 function Services() {
+      const [modal, setModal] = useState();
+      const openModal = () => {
+        setModal(!modal);
+      };
+    
+      
   return (
     <div id="services" className="mt-15">
       <div className="container px-10 flex flex-col lg:flex-row justify-between items-start w-full">
@@ -68,13 +77,39 @@ function Services() {
 
           {/* Qo‘ng‘iroq tugmasi */}
           <a
-            href="#"
+            onClick={openModal}
+            href="tel:+998971711118"
             className="inline-flex items-center gap-2 text-white bg-red-500 px-10 py-3 font-semibold mt-6"
           >
-            Qo'ng'iroq <FaArrowRight />
+            Связь <FaArrowRight />
           </a>
         </div>
       </div>
+          {modal ? (
+            <Modal>
+              <div className="bg-white my-auto mx-auto w-auto  p-5 pb-3 flex flex-col items-center rounded-2xl">
+                <h2 className="text-2xl font-bold text-center text-gray-700">Вызвать мастера</h2>
+                <p className="text-center text-gray-600 py-3">Чтобы связаться с администратором,
+                  <br />
+                  позвоните по этому номеру.</p>
+                  <h3 className="text-xl text-red-500 font-medium">+998971711118</h3>
+                
+                <div className=" flex gap-5 items-center justify-between">
+                  
+                  <button
+                    onClick={openModal}
+                    className="px-2 py-1 mt-2 rounded-sm text-white bg-red-500 hover:bg-red-600 active:scale-105 w-22 flex justify-center"
+                  >
+                    Отменить
+                  </button>
+
+                  <a href="tel:+998971711118" className="px-2 py-1 mt-2 rounded-sm text-white bg-emerald-700 hover:bg-emerald-800 active:scale-70 duration-100 w-22 flex justify-center">Связь</a>
+                </div>
+              </div>
+            </Modal>
+          ) : (
+            ""
+          )}
     </div>
   );
 }
