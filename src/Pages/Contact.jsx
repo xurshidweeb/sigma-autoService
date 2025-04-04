@@ -1,10 +1,11 @@
 import React from "react";
 import { FaEnvelopeOpen } from "react-icons/fa";
+import Form from "../Pages/Form";
 
 function Contact() {
   return (
     <div id="contact">
-      <div className="container px-10 flex flex-col items-center pt-15">
+      <div className="container px-5 flex flex-col items-center pt-15">
         <p className="text-red-500 text-xl md:text-2xl font-medium">
           // Свяжитесь с Нами //
         </p>
@@ -12,7 +13,7 @@ function Contact() {
           Свяжитесь с Нами по Любым Вопросам
         </h2>
         <div className="flex gap-5 w-full flex-wrap md:flex-nowrap">
-          <div className="bg-gray-200 py-3 px-5 w-full">
+          <div className="bg-gray-200 py-3 px-5 w-full rounded-xl">
             <h3 className="text-[#0B2154] text-xl md:text-3xl font-bold pb-2">
               // Бронирование //
             </h3>
@@ -21,7 +22,7 @@ function Contact() {
               <p className="text-gray-600">+99897 717 11 18</p>
             </div>
           </div>
-          <div className="bg-gray-200 py-3 px-5 w-full">
+          <div className="bg-gray-200 py-3 px-5 w-full rounded-xl">
             <h3 className="text-[#0B2154] text-xl md:text-3xl font-bold pb-2">
               // Бронирование //
             </h3>
@@ -31,17 +32,18 @@ function Contact() {
             </div>
           </div>
         </div>
-
-        <iframe
-        className="mt-10"
-          src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d11996.39274892076!2d69.2194!3d41.263198!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDE1JzQ3LjUiTiA2OcKwMTMnMDkuOCJF!5e0!3m2!1sru!2sus!4v1743482167541!5m2!1sru!2sus"
-          width="100%"
-          height="400"
-          // style="border:0;"
-          
-          loading="lazy"
-  
-        ></iframe>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="flex justify-center">
+            <Form />
+          </div>
+          <div className="flex justify-center ">
+            <iframe
+              className="mt-10 rounded-2xl w-full h-60 md:h-full shadow-lg"
+              src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d11996.39274892076!2d69.2194!3d41.263198!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDE1JzQ3LjUiTiA2OcKwMTMnMDkuOCJF!5e0!3m2!1sru!2sus!4v1743482167541!5m2!1sru!2sus"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </div>
   );

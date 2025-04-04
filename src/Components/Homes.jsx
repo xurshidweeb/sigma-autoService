@@ -5,7 +5,6 @@ import Services from "../Pages/Services";
 import Result from "../Pages/Result";
 import Xizmatlar from "../Pages/Xizmatlar";
 import Contact from "../Pages/Contact";
-import Form from "../Pages/Form";
 
 
 function Homes() {
@@ -18,7 +17,6 @@ function Homes() {
         <Result />
         <Xizmatlar />
         <Contact />
-        <Form />
       </div>
     </>
   );

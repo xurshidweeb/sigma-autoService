@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { FaCheckCircle, FaPaperPlane } from "react-icons/fa";
-import { ImSpinner2 } from "react-icons/im";
+import { FaCheckCircle, FaPaperPlane, FaExclamationCircle } from "react-icons/fa";
+import { ImSpinner9 } from "react-icons/im";
 import { FiUser, FiPhone, FiMessageSquare } from "react-icons/fi";
 
 function TelegramForm() {
@@ -24,7 +24,7 @@ function TelegramForm() {
     if (!formData.lastName.trim()) newErrors.lastName = "Фамилия обязательна";
     if (!formData.phone.trim()) newErrors.phone = "Телефон обязателен";
     else if (!/^\d+$/.test(formData.phone)) newErrors.phone = "Только цифры";
-
+    
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -42,7 +42,9 @@ function TelegramForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (isSending || isSent || !validate()) return;
+    if (isSending || isSent) return;
+    
+    if (!validate()) return;
 
     setIsSending(true);
 
@@ -88,16 +90,16 @@ function TelegramForm() {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-gradient-to-br from-white to-gray-50 shadow-lg rounded-2xl mt-10 border border-gray-100">
+    <div className="w-200 md:h-full p-6 md:w-200  bg-gradient-to-br from-white to-gray-50 shadow-lg rounded-2xl mt-10 border border-gray-100">
       <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
         Свяжитесь с нами
       </h2>
-
+      
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <FiUser className="text-gray-400" />
+              <FiUser className={`${errors.firstName ? "text-red-500 mt-[-23px]" : "text-gray-400"}`} />
             </div>
             <input
               type="text"
@@ -105,18 +107,19 @@ function TelegramForm() {
               placeholder="Имя"
               value={formData.firstName}
               onChange={handleChange}
-              className={`w-full pl-10 pr-4 py-3 border ${
-                errors.firstName ? "border-red-500" : "border-gray-300"
-              } rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
+              className={`w-full pl-10 pr-4 py-3 border ${errors.firstName ? "border-red-500" : "border-gray-300"} rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
             />
             {errors.firstName && (
-              <p className="mt-1 text-sm text-red-500">{errors.firstName}</p>
+              <div className="flex items-center  mt-1 text-sm text-red-500">
+                <FaExclamationCircle className="mr-1" />
+                {errors.firstName}
+              </div>
             )}
           </div>
-
+          
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <FiUser className="text-gray-400" />
+              <FiUser className={`${errors.lastName ? "text-red-500 mt-[-23px]" : "text-gray-400"}`} />
             </div>
             <input
               type="text"
@@ -124,19 +127,20 @@ function TelegramForm() {
               placeholder="Фамилия"
               value={formData.lastName}
               onChange={handleChange}
-              className={`w-full pl-10 pr-4 py-3 border ${
-                errors.lastName ? "border-red-500" : "border-gray-300"
-              } rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
+              className={`w-full pl-10 pr-4 py-3 border ${errors.lastName ? "border-red-500" : "border-gray-300"} rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
             />
             {errors.lastName && (
-              <p className="mt-1 text-sm text-red-500">{errors.lastName}</p>
+              <div className="flex items-center mt-1 text-sm text-red-500">
+                <FaExclamationCircle className="mr-1" />
+                {errors.lastName}
+              </div>
             )}
           </div>
         </div>
-
+        
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <FiPhone className="text-gray-400" />
+            <FiPhone className={`${errors.phone ? "text-red-500 mt-[-23px]" : "text-gray-400"}`} />
           </div>
           <input
             type="text"
@@ -144,15 +148,16 @@ function TelegramForm() {
             placeholder="Номер телефона"
             value={formData.phone}
             onChange={handleChange}
-            className={`w-full pl-10 pr-4 py-3 border ${
-              errors.phone ? "border-red-500" : "border-gray-300"
-            } rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
+            className={`w-full pl-10 pr-4 py-3 border ${errors.phone ? "border-red-500" : "border-gray-300"} rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
           />
           {errors.phone && (
-            <p className="mt-1 text-sm text-red-500">{errors.phone}</p>
+            <div className="flex items-center mt-1 text-sm text-red-500">
+              <FaExclamationCircle className="mr-1" />
+              {errors.phone}
+            </div>
           )}
         </div>
-
+        
         <div className="relative">
           <div className="absolute top-3 left-3">
             <FiMessageSquare className="text-gray-400" />
@@ -185,7 +190,7 @@ function TelegramForm() {
             </>
           ) : isSending ? (
             <>
-              <ImSpinner2 className="animate-spin text-white text-xl" />
+              <ImSpinner9 className="animate-spin text-white text-xl" />
               Отправка...
             </>
           ) : (
