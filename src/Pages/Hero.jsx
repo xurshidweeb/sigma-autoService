@@ -21,11 +21,31 @@ function Hero() {
               <FaCarBattery className="text-red-500 text-3xl md:text-4xl"/>
               <p className="text-md md:text-xl font-medium">Авто-Электрик</p>
             </div>
-            <div data-aos="fade-up" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
+            <div data-aos="fade-up" data-aos-delay="400" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
               <FaTools className="text-red-500 text-3xl md:text-4xl"/>
               <p className="text-md md:text-xl font-medium">Авто-Механик</p>
             </div>
             <div data-aos="fade-up" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
+              <FaCarCrash className="text-red-500 text-3xl md:text-4xl"/>
+              <p className="text-md md:text-xl font-medium">Ремонт Авто на Выезд</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
+              <FaUnlockAlt className="text-red-500 text-3xl md:text-4xl"/>
+              <p className="text-md md:text-xl font-medium">Авто-Вулканизация</p>
+            </div>
+            <div data-aos="fade-up" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
+              <FaCarAlt className="text-red-500 text-3xl md:text-4xl"/>
+              <p className="text-md md:text-xl font-medium">Вскрытия Автомобиля</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
+              <FaCarBattery className="text-red-500 text-3xl md:text-4xl"/>
+              <p className="text-md md:text-xl font-medium">Авто-Электрик</p>
+            </div>
+            <div data-aos="fade-up" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
+              <FaTools className="text-red-500 text-3xl md:text-4xl"/>
+              <p className="text-md md:text-xl font-medium">Авто-Механик</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
               <FaCarCrash className="text-red-500 text-3xl md:text-4xl"/>
               <p className="text-md md:text-xl font-medium">Ремонт Авто на Выезд</p>
             </div>
@@ -37,7 +57,7 @@ function Hero() {
               <FaCarAlt className="text-red-500 text-3xl md:text-4xl"/>
               <p className="text-md md:text-xl font-medium">Вскрытия Автомобиля</p>
             </div>
-            <div data-aos="fade-up" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
+            <div data-aos="fade-up" data-aos-delay="400" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
               <FaCarBattery className="text-red-500 text-3xl md:text-4xl"/>
               <p className="text-md md:text-xl font-medium">Авто-Электрик</p>
             </div>
@@ -45,7 +65,7 @@ function Hero() {
               <FaTools className="text-red-500 text-3xl md:text-4xl"/>
               <p className="text-md md:text-xl font-medium">Авто-Механик</p>
             </div>
-            <div data-aos="fade-up" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
+            <div data-aos="fade-up"data-aos-delay="400" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
               <FaCarCrash className="text-red-500 text-3xl md:text-4xl"/>
               <p className="text-md md:text-xl font-medium">Ремонт Авто на Выезд</p>
             </div>
@@ -53,27 +73,7 @@ function Hero() {
               <FaUnlockAlt className="text-red-500 text-3xl md:text-4xl"/>
               <p className="text-md md:text-xl font-medium">Авто-Вулканизация</p>
             </div>
-            <div data-aos="fade-up" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
-              <FaCarAlt className="text-red-500 text-3xl md:text-4xl"/>
-              <p className="text-md md:text-xl font-medium">Вскрытия Автомобиля</p>
-            </div>
-            <div data-aos="fade-up" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
-              <FaCarBattery className="text-red-500 text-3xl md:text-4xl"/>
-              <p className="text-md md:text-xl font-medium">Авто-Электрик</p>
-            </div>
-            <div data-aos="fade-up" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
-              <FaTools className="text-red-500 text-3xl md:text-4xl"/>
-              <p className="text-md md:text-xl font-medium">Авто-Механик</p>
-            </div>
-            <div data-aos="fade-up" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
-              <FaCarCrash className="text-red-500 text-3xl md:text-4xl"/>
-              <p className="text-md md:text-xl font-medium">Ремонт Авто на Выезд</p>
-            </div>
-            <div data-aos="fade-up" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
-              <FaUnlockAlt className="text-red-500 text-3xl md:text-4xl"/>
-              <p className="text-md md:text-xl font-medium">Авто-Вулканизация</p>
-            </div>
-            <div data-aos="fade-up" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
+            <div data-aos="fade-up"data-aos-delay="400" className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100">
               <FaCarAlt className="text-red-500 text-3xl md:text-4xl"/>
               <p className="text-md md:text-xl font-medium">Вскрытия Автомобиля</p>
             </div>
