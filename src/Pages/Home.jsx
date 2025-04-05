@@ -9,8 +9,6 @@ import hero3 from "../assets/malibu2.jpg";
 import { FaArrowRight } from "react-icons/fa";
 import carusel1 from "../assets/carousel-1.png";
 import carusel2 from "../assets/carousel-2.png";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Modal from "../Components/Modal";
 import { useTranslation } from "react-i18next";
 
@@ -20,12 +18,6 @@ function Home() {
     setModal(!modal);
   };
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: false,
-    });
-  }, []);
   const { t, i18n } = useTranslation();
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);

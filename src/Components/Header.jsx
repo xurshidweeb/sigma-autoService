@@ -91,12 +91,14 @@ function Header() {
               </a>
             </nav>
             <button
-            onClick={openModal}
-            className="flex items-center cursor-pointer bg-red-600 py-2 px-4 mt-2 rounded-2xl gap-2"
-          >
-            <p className="text-lg font-medium text-white">{t("header.btn")}</p>
-            <FaArrowRight className="text-lg font-medium text-white" />
-          </button>
+              onClick={openModal}
+              className="flex items-center cursor-pointer bg-red-600 py-2 px-4 mt-2 rounded-2xl gap-2"
+            >
+              <p className="text-lg font-medium text-white">
+                {t("header.btn")}
+              </p>
+              <FaArrowRight className="text-lg font-medium text-white" />
+            </button>
           </div>
         )}
 

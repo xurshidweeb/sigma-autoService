@@ -1,6 +1,5 @@
-import AOS from "aos";
 import "aos/dist/aos.css";
-import React, { useEffect } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import {
   FaCarAlt,
@@ -12,12 +11,6 @@ import {
 } from "react-icons/fa";
 
 function Hero() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
   const { t, i18n } = useTranslation();
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
