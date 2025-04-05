@@ -1,0 +1,115 @@
+{
+  "header": {
+    "nav1": "Bosh sahifa",
+    "nav2": "Biz haqimizda",
+    "nav3": "Xizmatlar",
+    "nav4": "Aloqa",
+    "btn": "Ustani chaqirish",
+    "modal": {
+      "text": "Administrator bilan bog‘lanish uchun ushbu raqamga qo‘ng‘iroq qiling.",
+      "btn1": "Bekor qilish",
+      "btn2": "Bog‘lanish"
+    }
+  },
+  "home": {
+    "title": "// Avtomobillar ta'miri //",
+    "text1": "Avtomobilni muddatli to‘lov asosida ta’mirlash",
+    "text2": "Yo‘lda yordam",
+    "text3": "Eng sifatli avto ehtiyot qismlar",
+    "btn": "Batafsil ma’lumot"
+  },
+  "hero": {
+    "text": "Bizning xizmatlar",
+    "title": "Xizmatlarimiz bilan tanishing",
+    "text1": "Avto-elektrik",
+    "text2": "Avto-mexanik",
+    "text3": "Sayyor avtomobil ta'miri",
+    "text4": "Avto-vulkanizatsiya",
+    "text5": "Avtomobilni ochish"
+  },
+
+  "service": {
+    "toptext": "// Biz Haqimizda //",
+    "title": "- Avtomobilingizga G'amxo'rlik Ko'rsatish Uchun Eng Yaxshi Joy",
+    "text": "Biz avtomobillarni ta'mirlash bo'yicha yuqori sifatli xizmatlarni taqdim etamiz, yillar davomida tajriba va professionallik bilan.",
+    "subtitle1": "Mutaxassislar va Ekspertlar",
+    "subtitle2": "Sifatli Xizmat Ko'rsatish Markazi",
+    "subtitle3": "Mukofotlangan Xodimlar",
+    "text1": "Bizning mutaxassislarimiz yuqori malaka va professionallikka ega.",
+    "text2": "Biz har bir mijozga yuqori sifatli xizmat ko'rsatishni kafolatlaymiz.",
+    "text3": "Bizning xodimlarimiz o'z ishlarini mukofotlar bilan taqdirlangan.",
+    "btn": "Aloqa"
+  },
+  "result": {
+    "text1": "Tajriba yillari",
+    "text2": "Ekspert texniklar",
+    "text3": "Mamnun mijozlar",
+    "text4": "Bajarilgan loyihalar"
+  },
+  "xizmat": {
+    "left1": "Diagnostika",
+    "left2": "Dvigatelni xizmat ko'rsatish",
+    "left3": "Shinalarni almashtirish",
+    "left4": "Moyni almashtirish",
+    "title": "Avtoservista 15 Yillik Tajriba",
+    "text1": "Biz avtomobilingizni diagnostika qilishda eng zamonaviy texnologiyalar va uskuna yordamida yuqori sifatli xizmat ko'rsatamiz.",
+    "text2": "Bizning mutaxassislarimiz avtomobilingizning maksimal samaradorlikda ishlashi uchun motorni kompleks xizmat ko'rsatishni taklif qilishga tayyor.",
+    "text3": "Biz shinalarni almashtirish bo'yicha professional xizmatlar taklif qilamiz, shunda avtomobilingiz har qanday ob-havo sharoitida yo'lda xavfsiz bo'ladi.",
+    "text4": "Biz tez va sifatli moy almashtirishni taklif qilamiz, shunda motoringiz silliq va samarali ishlaydi.",
+    "bottom1": "Sifatli Xizmatlar",
+    "bottom2": "Tajribali Mutaxassislar",
+    "bottom3": "Zamonaviy Uskuna"
+  },
+  "contact": {
+    "toptext": "// Biz bilan bog‘laning //",
+    "title": "Istalgan savollar bo‘yicha biz bilan bog‘laning",
+    "left": "// Bron qilish //",
+    "rigtht": "// Umumiy savollar //"
+  },
+  "form": {
+    "text": "Biz bilan bog‘laning",
+    "pl1": "Ism",
+    "pl2": "Familiya",
+    "pl3": "Telefon raqami",
+    "pl4": "Xabar",
+    "btn": "Yuborish",
+    "btn1": "Yuborilmoqda...",
+    "btn2": "Yuborildi!!!",
+    "error1": "Ism majburiy",
+    "error2": "Familiya majburiy",
+    "error3": "Telefon raqami majburiy",
+    "error4": "Faqat raqamlar"
+  },
+
+  "footer": {
+    "address": {
+      "title": "Manzil",
+      "full": "Yakkasaroy ko‘chasi,\nToshkent shahri, O‘zbekiston,\nMo‘ljal: Navruz to‘yxonasi qarshisida"
+    },
+    "hours": {
+      "title": "Ish vaqti",
+      "schedule": "Dushanba - Yakshanba:\n24/7"
+    },
+    "services": {
+      "title": "Xizmatlar",
+      "items": {
+        "diagnostics": "Diagnostika",
+        "engine": "Dvigatel xizmatlari",
+        "spike": "Ship almashtirish",
+        "oil": "Yog‘ almashtirish",
+        "lathe": "Tokarlik xizmatlari",
+        "tinting": "Toning",
+        "motorist": "Motorchi",
+        "castapra": "Kastapra",
+        "vacuum": "Vakuum tozalash",
+        "electrician": "Avto-Elektrik",
+        "mechanic": "Avto-Mexanik"
+      }
+    },
+    "contacts": {
+      "title": "Aloqa",
+      "button": "Ustani chaqirish"
+    },
+    "copyright": "Avtoservis. Barcha huquqlar himoyalangan."
+  }
+}

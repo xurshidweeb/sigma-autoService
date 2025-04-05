@@ -1,9 +1,16 @@
 import React, { useState } from "react";
-import { FaCheckCircle, FaPaperPlane, FaExclamationCircle } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaPaperPlane,
+  FaExclamationCircle,
+} from "react-icons/fa";
 import { ImSpinner9 } from "react-icons/im";
 import { FiUser, FiPhone, FiMessageSquare } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 function TelegramForm() {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -20,11 +27,11 @@ function TelegramForm() {
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.firstName.trim()) newErrors.firstName = "Имя обязательно";
-    if (!formData.lastName.trim()) newErrors.lastName = "Фамилия обязательна";
-    if (!formData.phone.trim()) newErrors.phone = "Телефон обязателен";
-    else if (!/^\d+$/.test(formData.phone)) newErrors.phone = "Только цифры";
-    
+    if (!formData.firstName.trim()) newErrors.firstName = t("form.error1");
+    if (!formData.lastName.trim()) newErrors.lastName = t("form.error2");
+    if (!formData.phone.trim()) newErrors.phone = t("form.error3");
+    else if (!/^\d+$/.test(formData.phone)) newErrors.phone = t("form.error4");
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -43,7 +50,7 @@ function TelegramForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isSending || isSent) return;
-    
+
     if (!validate()) return;
 
     setIsSending(true);
@@ -92,22 +99,28 @@ function TelegramForm() {
   return (
     <div className="w-200 md:h-full p-6 md:w-200  bg-gradient-to-br from-white to-gray-50 shadow-lg rounded-2xl mt-10 border border-gray-100">
       <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-        Свяжитесь с нами
+        {t("form.text")}
       </h2>
-      
+
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <FiUser className={`${errors.firstName ? "text-red-500 mt-[-23px]" : "text-gray-400"}`} />
+              <FiUser
+                className={`${
+                  errors.firstName ? "text-red-500 mt-[-23px]" : "text-gray-400"
+                }`}
+              />
             </div>
             <input
               type="text"
               name="firstName"
-              placeholder="Имя"
+              placeholder={t("form.pl1")}
               value={formData.firstName}
               onChange={handleChange}
-              className={`w-full pl-10 pr-4 py-3 border ${errors.firstName ? "border-red-500" : "border-gray-300"} rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
+              className={`w-full pl-10 pr-4 py-3 border ${
+                errors.firstName ? "border-red-500" : "border-gray-300"
+              } rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
             />
             {errors.firstName && (
               <div className="flex items-center  mt-1 text-sm text-red-500">
@@ -116,18 +129,24 @@ function TelegramForm() {
               </div>
             )}
           </div>
-          
+
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <FiUser className={`${errors.lastName ? "text-red-500 mt-[-23px]" : "text-gray-400"}`} />
+              <FiUser
+                className={`${
+                  errors.lastName ? "text-red-500 mt-[-23px]" : "text-gray-400"
+                }`}
+              />
             </div>
             <input
               type="text"
               name="lastName"
-              placeholder="Фамилия"
+              placeholder={t("form.pl2")}
               value={formData.lastName}
               onChange={handleChange}
-              className={`w-full pl-10 pr-4 py-3 border ${errors.lastName ? "border-red-500" : "border-gray-300"} rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
+              className={`w-full pl-10 pr-4 py-3 border ${
+                errors.lastName ? "border-red-500" : "border-gray-300"
+              } rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
             />
             {errors.lastName && (
               <div className="flex items-center mt-1 text-sm text-red-500">
@@ -137,18 +156,24 @@ function TelegramForm() {
             )}
           </div>
         </div>
-        
+
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <FiPhone className={`${errors.phone ? "text-red-500 mt-[-23px]" : "text-gray-400"}`} />
+            <FiPhone
+              className={`${
+                errors.phone ? "text-red-500 mt-[-23px]" : "text-gray-400"
+              }`}
+            />
           </div>
           <input
             type="text"
             name="phone"
-            placeholder="Номер телефона"
+            placeholder={t("form.pl3")}
             value={formData.phone}
             onChange={handleChange}
-            className={`w-full pl-10 pr-4 py-3 border ${errors.phone ? "border-red-500" : "border-gray-300"} rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
+            className={`w-full pl-10 pr-4 py-3 border ${
+              errors.phone ? "border-red-500" : "border-gray-300"
+            } rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
           />
           {errors.phone && (
             <div className="flex items-center mt-1 text-sm text-red-500">
@@ -157,14 +182,14 @@ function TelegramForm() {
             </div>
           )}
         </div>
-        
+
         <div className="relative">
           <div className="absolute top-3 left-3">
             <FiMessageSquare className="text-gray-400" />
           </div>
           <textarea
             name="message"
-            placeholder="Сообщение..."
+            placeholder={t("form.pl4")}
             rows="4"
             value={formData.message}
             onChange={handleChange}
@@ -186,17 +211,17 @@ function TelegramForm() {
           {isSent ? (
             <>
               <FaCheckCircle className="text-white text-xl" />
-              Отправлено!
+              {t("form.btn2")}
             </>
           ) : isSending ? (
             <>
               <ImSpinner9 className="animate-spin text-white text-xl" />
-              Отправка...
+              {t("form.btn1")}
             </>
           ) : (
             <>
               <FaPaperPlane className="text-white text-xl" />
-              Отправить
+              {t("form.btn")}
             </>
           )}
         </button>

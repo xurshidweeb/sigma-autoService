@@ -4,14 +4,19 @@ import about from "../assets/about.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Modal from "../Components/Modal";
+import { useTranslation } from "react-i18next";
 
 function Services() {
-      const [modal, setModal] = useState();
-      const openModal = () => {
-        setModal(!modal);
-      };
-    
-      
+  const [modal, setModal] = useState();
+  const openModal = () => {
+    setModal(!modal);
+  };
+
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
   return (
     <div id="services" className="mt-15">
       <div className="container px-10 flex flex-col lg:flex-row justify-between items-start w-full">
@@ -19,20 +24,18 @@ function Services() {
         <div className="relative w-full md:w-4/5 lg:w-[500px] mx-auto lg:mx-0">
           <img src={about} alt="" className="object-cover w-full h-[600px]" />
           <div className="absolute right-[-20px] top-[-20px] text-3xl text-white font-medium w-[150px] p-4 bg-black/25">
-            <span className="text-5xl">15</span> Лет Опыт
+            <span className="text-5xl">15</span> Лет опыом
           </div>
         </div>
 
         {/* Matnli blok */}
         <div className="lg:w-1/2 w-full mt-8 lg:mt-0">
-          <p className="text-red-500 pb-3">// О Нас //</p>
+          <p className="text-red-500 pb-3">{t("service.toptext")}</p>
           <h2 className="text-3xl font-bold">
-            <span className="text-red-500">Sigma Avtoservis</span> - Лучшее
-            Место Для Ухода За Вашим Авто
+            <span className="text-red-500">Sigma Avtoservis</span> {t("service.title")}
           </h2>
           <p className="mt-4 text-gray-700">
-            Мы предоставляем высококачественные услуги по ремонту автомобилей с
-            многолетним опытом и профессионализмом.
+            {t("service.text")}
           </p>
 
           {/* Xizmatlar bo‘limi */}
@@ -42,11 +45,10 @@ function Services() {
             </div>
             <div>
               <h3 className="text-lg font-semibold">
-                Профессионалы и Эксперты
+                {t("service.subtitle1")}
               </h3>
               <p className="text-gray-600">
-                Наши специалисты обладают высоким уровнем квалификации и
-                профессионализма.
+                {t("service.text1")}
               </p>
             </div>
           </div>
@@ -56,10 +58,10 @@ function Services() {
             </div>
             <div>
               <h3 className="text-lg font-semibold">
-                Качественный Сервисный Центр
+                {t("service.subtitle2")}
               </h3>
               <p className="text-gray-600">
-                Мы гарантируем высокое качество обслуживания каждого клиента.
+                {t("service.text2")}
               </p>
             </div>
           </div>
@@ -68,9 +70,9 @@ function Services() {
               03
             </div>
             <div>
-              <h3 className="text-lg font-semibold">Награжденные Работники</h3>
+              <h3 className="text-lg font-semibold">{t("service.subtitle3")}</h3>
               <p className="text-gray-600">
-                Наши сотрудники удостоены многочисленных наград за свою работу.
+                {t("service.text3")}
               </p>
             </div>
           </div>
@@ -81,35 +83,42 @@ function Services() {
             href="tel:+998971711118"
             className="inline-flex items-center gap-2 text-white bg-red-500 px-10 py-3 font-semibold mt-6"
           >
-            Связь <FaArrowRight />
+            {t("service.btn")} <FaArrowRight />
           </a>
         </div>
       </div>
-          {modal ? (
-            <Modal>
-              <div className="bg-white my-auto mx-auto w-auto  p-5 pb-3 flex flex-col items-center rounded-2xl">
-                <h2 className="text-2xl font-bold text-center text-gray-700">Вызвать мастера</h2>
-                <p className="text-center text-gray-600 py-3">Чтобы связаться с администратором,
-                  <br />
-                  позвоните по этому номеру.</p>
-                  <h3 className="text-xl text-red-500 font-medium">+998971711118</h3>
-                
-                <div className=" flex gap-5 items-center justify-between">
-                  
-                  <button
-                    onClick={openModal}
-                    className="px-2 py-1 mt-2 rounded-sm text-white bg-red-500 hover:bg-red-600 active:scale-105 w-22 flex justify-center"
-                  >
-                    Отменить
-                  </button>
+      {modal ? (
+        <Modal>
+          <div className="bg-white my-auto mx-auto max-w-[300px] w-auto  p-5 pb-3 flex flex-col items-center rounded-2xl">
+            <h2 className="text-2xl font-bold text-center text-gray-700">
+              {t("header.btn")}
+            </h2>
+            <p className="text-center text-gray-600 py-3">
+              {t("header.modal.text")}
+            </p>
+            <h3 className="text-xl text-red-500 font-medium">+998971711118</h3>
 
-                  <a href="tel:+998971711118" className="px-2 py-1 mt-2 rounded-sm text-white bg-emerald-700 hover:bg-emerald-800 active:scale-70 duration-100 w-22 flex justify-center">Связь</a>
-                </div>
-              </div>
-            </Modal>
-          ) : (
-            ""
-          )}
+            <div className=" flex gap-5 items-center justify-between">
+              <button
+                onClick={openModal}
+                className="px-2 py-1 mt-2 rounded-sm text-white bg-red-500 hover:bg-red-600 active:scale-105 flex justify-center"
+              >
+              {t("header.modal.btn1")}
+                
+              </button>
+
+              <a
+                href="tel:+998971711118"
+                className="px-2 py-1 mt-2 rounded-sm text-white bg-emerald-700 hover:bg-emerald-800 active:scale-70 duration-100 flex justify-center"
+              >
+                {t("header.modal.btn2")}
+              </a>
+            </div>
+          </div>
+        </Modal>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

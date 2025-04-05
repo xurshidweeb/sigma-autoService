@@ -14,277 +14,140 @@ import {
   FaCarCrash,
   FaInstagram,
 } from "react-icons/fa";
-import bg from "../assets/tracker.jpg";
 import { RiTelegramLine } from "react-icons/ri";
+import { useTranslation } from "react-i18next"; // ✅ TIL QO‘SHILDI
+import bg from "../assets/tracker.jpg";
 
 function Footer() {
+  const { t } = useTranslation(); // ✅
+
   return (
-    <div
-      className="footer-container mt-20"
+    <div 
+      className="mt-20 bg-cover bg-center bg-fixed text-white p-10 font-sans"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(${bg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-        color: "white",
-        padding: "40px 20px",
-        fontFamily: "Arial, sans-serif",
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(${bg})`
       }}
     >
-      <div
-        className="footer-content"
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-          maxWidth: "1200px",
-          margin: "0 auto",
-          gap: "30px",
-        }}
-      >
+      <div className="max-w-6xl mx-auto flex flex-wrap justify-between gap-8">
         {/* Address Section */}
-        <div style={{ flex: "1", minWidth: "250px" }}>
-          <h3
-            style={{
-              borderBottom: "2px solid #4CAF50",
-              paddingBottom: "10px",
-              marginBottom: "20px",
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
-            }}
-          >
-            <FaMapMarkerAlt size={20} /> Адрес
+        <div className="flex-1 min-w-[250px]">
+          <h3 className="border-b-2 border-green-500 pb-2.5 mb-5 flex items-center gap-2.5">
+            <FaMapMarkerAlt size={20} /> {t("footer.address.title")}
           </h3>
-          <p
-            style={{
-              margin: "8px 0",
-              lineHeight: "1.6",
-              display: "flex",
-              alignItems: "flex-start",
-              gap: "10px",
-            }}
-          >
-            <span style={{ marginTop: "3px" }}>📍</span>
-            <span>
-              Ул. Якхасарайская,
-              <br />
-              г. Ташкент, Узбекистан,
-              <br />
-              Ориентир: Напротив
-              <br />
-              свадебный ресторан Navruz
-            </span>
+          <p className="my-2 leading-relaxed flex items-start gap-2.5">
+            <span className="mt-0.5">📍</span>
+            <span>{t("footer.address.full")}</span>
           </p>
-          <div
-            style={{
-              margin: "15px 0",
-              display: "flex",
-              flexDirection: "column",
-              gap: "8px",
-            }}
-          >
+          <div className="my-4 flex flex-col gap-2">
             <a
               href="tel:+998977171118"
-              style={{
-                color: "red",
-                textDecoration: "none",
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-              }}
+              className="text-red-500 no-underline flex items-center gap-2.5 hover:text-red-400"
             >
               <FaPhone /> +99897 717 11 18
             </a>
             <a
               href="tel:+998977387275"
-              style={{
-                color: "red",
-                textDecoration: "none",
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-              }}
+              className="text-red-500 no-underline flex items-center gap-2.5 hover:text-red-400"
             >
               <FaPhone /> +99897 738 72 75
             </a>
-            <div className="">
-              <a href="" className="flex gap-4 px-3">
-              <FaInstagram className="text-3xl" />
-              <RiTelegramLine className="text-3xl" />
-              </a>
+            <div className="flex gap-4 px-3">
+              <FaInstagram className="text-3xl hover:text-pink-500 cursor-pointer" />
+              <RiTelegramLine className="text-3xl hover:text-blue-400 cursor-pointer" />
             </div>
           </div>
         </div>
 
         {/* Hours Section */}
-        <div style={{ flex: "1", minWidth: "250px" }}>
-          <h3
-            style={{
-              borderBottom: "2px solid #4CAF50",
-              paddingBottom: "10px",
-              marginBottom: "20px",
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
-            }}
-          >
-            <FaClock size={20} /> Часы Работы
+        <div className="flex-1 min-w-[250px]">
+          <h3 className="border-b-2 border-green-500 pb-2.5 mb-5 flex items-center gap-2.5">
+            <FaClock size={20} /> {t("footer.hours.title")}
           </h3>
-          <p
-            style={{
-              margin: "5px 0",
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
-            }}
-          >
-            <span style={{ color: "#4CAF50" }}>⏰</span>
-            <span>
-              <strong>Понедельник - Воскресенье:</strong>
-              <br />
-              24/7
-            </span>
+          <p className="my-1 flex items-center gap-2.5">
+            <span className="text-green-500">⏰</span>
+            <span>{t("footer.hours.schedule")}</span>
           </p>
         </div>
 
         {/* Services Section */}
-        <div style={{ flex: "1", minWidth: "250px" }}>
-          <h3
-            style={{
-              borderBottom: "2px solid #4CAF50",
-              paddingBottom: "10px",
-              marginBottom: "20px",
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
-            }}
-          >
-            <FaTools size={20} /> Услуги
+        <div className="flex-1 min-w-[250px]">
+          <h3 className="border-b-2 border-green-500 pb-2.5 mb-5 flex items-center gap-2.5">
+            <FaTools size={20} /> {t("footer.services.title")}
           </h3>
-          <ul
-            style={{
-              margin: "5px 0",
-              paddingLeft: "0",
-              listStyleType: "none",
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
-              gap: "",
-            }}
-          >
-            <ServiceItem icon={<FaCarCrash />} text="Диагностика" />
-            <ServiceItem icon={<FaCog />} text="Обслуживание Двигателя" />
-            <ServiceItem icon={<FaCar />} text="Замена Шип" />
-            <ServiceItem icon={<FaOilCan />} text="Замена Масла" />
-            <ServiceItem icon={<FaTools />} text="Токарная Услуга" />
-            <ServiceItem icon={<FaTint />} text="Тонировка" />
-            <ServiceItem icon={<FaFan />} text="Моторист" />
-            <ServiceItem icon={<FaTools />} text="Кастапраа" />
-            <ServiceItem icon={<FaTools />} text="Вакуумная Чистка" />
-            <ServiceItem icon={<FaPlug />} text="Авто-Электрик" />
-            <ServiceItem icon={<FaWrench />} text="Авто-Механик" />
-            
+          <ul className="my-1 pl-0 list-none grid grid-cols-1">
+            <li className="py-1 hover:pl-1 transition-all">
+              <a href="#" className="text-white no-underline flex items-center gap-2 hover:text-green-500">
+                <FaCarCrash /> {t("footer.services.items.diagnostics")}
+              </a>
+            </li>
+            <li className="py-1 hover:pl-1 transition-all">
+              <a href="#" className="text-white no-underline flex items-center gap-2 hover:text-green-500">
+                <FaCog /> {t("footer.services.items.engine")}
+              </a>
+            </li>
+            <li className="py-1 hover:pl-1 transition-all">
+              <a href="#" className="text-white no-underline flex items-center gap-2 hover:text-green-500">
+                <FaCar /> {t("footer.services.items.spike")}
+              </a>
+            </li>
+            <li className="py-1 hover:pl-1 transition-all">
+              <a href="#" className="text-white no-underline flex items-center gap-2 hover:text-green-500">
+                <FaOilCan /> {t("footer.services.items.oil")}
+              </a>
+            </li>
+            <li className="py-1 hover:pl-1 transition-all">
+              <a href="#" className="text-white no-underline flex items-center gap-2 hover:text-green-500">
+                <FaTools /> {t("footer.services.items.lathe")}
+              </a>
+            </li>
+            <li className="py-1 hover:pl-1 transition-all">
+              <a href="#" className="text-white no-underline flex items-center gap-2 hover:text-green-500">
+                <FaTint /> {t("footer.services.items.tinting")}
+              </a>
+            </li>
+            <li className="py-1 hover:pl-1 transition-all">
+              <a href="#" className="text-white no-underline flex items-center gap-2 hover:text-green-500">
+                <FaFan /> {t("footer.services.items.motorist")}
+              </a>
+            </li>
+            <li className="py-1 hover:pl-1 transition-all">
+              <a href="#" className="text-white no-underline flex items-center gap-2 hover:text-green-500">
+                <FaTools /> {t("footer.services.items.castapra")}
+              </a>
+            </li>
+            <li className="py-1 hover:pl-1 transition-all">
+              <a href="#" className="text-white no-underline flex items-center gap-2 hover:text-green-500">
+                <FaTools /> {t("footer.services.items.vacuum")}
+              </a>
+            </li>
+            <li className="py-1 hover:pl-1 transition-all">
+              <a href="#" className="text-white no-underline flex items-center gap-2 hover:text-green-500">
+                <FaPlug /> {t("footer.services.items.electrician")}
+              </a>
+            </li>
+            <li className="py-1 hover:pl-1 transition-all">
+              <a href="#" className="text-white no-underline flex items-center gap-2 hover:text-green-500">
+                <FaWrench /> {t("footer.services.items.mechanic")}
+              </a>
+            </li>
           </ul>
         </div>
 
         {/* Contacts Section */}
-        <div style={{ flex: "1", minWidth: "250px" }}>
-          <h3
-            style={{
-              borderBottom: "2px solid #4CAF50",
-              paddingBottom: "10px",
-              marginBottom: "20px",
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
-            }}
-          >
-            <FaPhone size={20} /> Контакты
+        <div className="flex-1 min-w-[250px]">
+          <h3 className="border-b-2 border-green-500 pb-2.5 mb-5 flex items-center gap-2.5">
+            <FaPhone size={20} /> {t("footer.contacts.title")}
           </h3>
-          <button
-            style={{
-              backgroundColor: "#4CAF50",
-              color: "white",
-              border: "none",
-              padding: "14px 28px",
-              textAlign: "center",
-              textDecoration: "none",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "10px",
-              fontSize: "16px",
-              margin: "10px 0",
-              cursor: "pointer",
-              borderRadius: "6px",
-              fontWeight: "bold",
-              transition: "all 0.3s ease",
-              width: "100%",
-              maxWidth: "300px",
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = "red";
-              e.target.style.transform = "scale(1.03)";
-              e.target.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = "#4CAF50";
-              e.target.style.transform = "scale(1)";
-              e.target.style.boxShadow = "none";
-            }}
-          >
-            <FaPhone /> Вызвать мастера
+          <button className="bg-green-500 text-white border-none py-3.5 px-7 text-center no-underline flex items-center justify-center gap-2.5 text-base my-2.5 cursor-pointer rounded font-bold transition-all w-full max-w-[300px] hover:bg-red-500 hover:scale-103 hover:shadow-md">
+            <FaPhone /> {t("footer.contacts.button")}
           </button>
         </div>
       </div>
 
-      <div
-        style={{
-          textAlign: "center",
-          marginTop: "10px",
-          paddingTop: "20px",
-          borderTop: "1px solid rgba(255, 255, 255, 0.3)",
-          fontSize: "14px",
-          opacity: "0.8",
-        }}
-      >
-        <p>© 2025 Автосервис. Все права защищены.</p>
+      <div className="text-center mt-2.5 pt-5 border-t border-white/30 text-sm opacity-80">
+        <p>© 2025 {t("footer.copyright")}</p>
       </div>
     </div>
-  );
-}
-
-// Service item component for hover effects
-function ServiceItem({ icon, text }) {
-  return (
-    <li
-      style={{
-        transition: "all 0.3s ease",
-        padding: "5px 0",
-      }}
-    >
-      <a
-        href="#"
-        style={{
-          color: "white",
-          textDecoration: "none",
-          display: "flex",
-          alignItems: "center",
-          gap: "10px",
-          transition: "all 0.2s ease",
-        }}
-        onMouseEnter={(e) => {
-          e.target.style.color = "#4CAF50";
-          e.target.style.paddingLeft = "5px";
-        }}
-        onMouseLeave={(e) => {
-          e.target.style.color = "white";
-          e.target.style.paddingLeft = "0";
-        }}
-      >
-        {icon} {text}
-      </a>
-    </li>
   );
 }
 

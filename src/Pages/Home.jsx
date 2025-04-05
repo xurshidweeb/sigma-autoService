@@ -12,19 +12,24 @@ import carusel2 from "../assets/carousel-2.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Modal from "../Components/Modal";
+import { useTranslation } from "react-i18next";
 
 function Home() {
-    const [modal, setModal] = useState();
-    const openModal = () => {
-      setModal(!modal);
-    };
-  
+  const [modal, setModal] = useState();
+  const openModal = () => {
+    setModal(!modal);
+  };
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
     });
   }, []);
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
 
   return (
     <div id="home" className="overflow-hidden">
@@ -54,22 +59,24 @@ function Home() {
               <div className="container z-1 px-10 flex justify-center md:justify-between items-center">
                 <div className="text-white flex flex-col items-center md:items-start gap-5">
                   <p className="text-md text-center md:text-left md:text-xl font-bold">
-                    // Ремонт автомобилей //
+                    {t("home.title")}
                   </p>
                   <h1
                     data-aos="fade-down"
                     className="text-5xl text-center md:text-left md:text-7xl font-bold"
                   >
-                    {index === 2
-                      ? "Ремонт автомобиля в рассрочку"
-                      : "Помощь на дороге"}
+                    {index === 1
+                      ? t("home.text2")
+                      : index === 2
+                      ? t("home.text3")
+                      : t("home.text1")}
                   </h1>
                   <a
-                  onClick={openModal}
+                    onClick={openModal}
                     href="#"
                     className="flex items-center justify-center gap-2 w-40 py-2 bg-red-600"
                   >
-                    Узнать больше
+                    {t("home.btn")}
                     <FaArrowRight />
                   </a>
                 </div>
@@ -90,30 +97,36 @@ function Home() {
       <div className="swiper-button-next !text-white"></div>
 
       {modal ? (
-            <Modal>
-              <div className="bg-white my-auto mx-auto w-auto  p-5 pb-3 flex flex-col items-center rounded-2xl">
-                <h2 className="text-2xl font-bold text-center text-gray-700">Вызвать мастера</h2>
-                <p className="text-center text-gray-600 py-3">Чтобы связаться с администратором,
-                  <br />
-                  позвоните по этому номеру.</p>
-                  <h3 className="text-xl text-red-500 font-medium">+998971711118</h3>
-                
-                <div className=" flex gap-5 items-center justify-between">
-                  
-                  <button
-                    onClick={openModal}
-                    className="px-2 py-1 mt-2 rounded-sm text-white bg-red-500 hover:bg-red-600 active:scale-105 w-22 flex justify-center"
-                  >
-                    Отменить
-                  </button>
+        <Modal>
+          <div className="bg-white my-auto mx-auto max-w-[300px] w-auto  p-5 pb-3 flex flex-col items-center rounded-2xl">
+            <h2 className="text-2xl font-bold text-center text-gray-700">
+              {t("header.btn")}
+            </h2>
+            <p className="text-center text-gray-600 py-3">
+              {t("header.modal.text")}
+            </p>
+            <h3 className="text-xl text-red-500 font-medium">+998971711118</h3>
 
-                  <a href="tel:+998971711118" className="px-2 py-1 mt-2 rounded-sm text-white bg-emerald-700 hover:bg-emerald-800 active:scale-70 duration-100 w-22 flex justify-center">Связь</a>
-                </div>
-              </div>
-            </Modal>
-          ) : (
-            ""
-          )}
+            <div className=" flex gap-5 items-center justify-between">
+              <button
+                onClick={openModal}
+                className="px-2 py-1 mt-2 rounded-sm text-white bg-red-500 hover:bg-red-600 active:scale-105 flex justify-center"
+              >
+                {t("header.modal.btn1")}
+              </button>
+
+              <a
+                href="tel:+998971711118"
+                className="px-2 py-1 mt-2 rounded-sm text-white bg-emerald-700 hover:bg-emerald-800 active:scale-70 duration-100  flex justify-center"
+              >
+                {t("header.modal.btn2")}
+              </a>
+            </div>
+          </div>
+        </Modal>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

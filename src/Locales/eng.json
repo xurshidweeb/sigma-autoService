@@ -1,0 +1,114 @@
+{
+  "header": {
+    "nav1": "Home",
+    "nav2": "About Us",
+    "nav3": "Services",
+    "nav4": "Contact",
+    "btn": "Call a Master",
+    "modal": {
+      "text": "To contact the administrator, call this number.",
+      "btn1": "Cancel",
+      "btn2": "Contact"
+    }
+  },
+  "home": {
+    "title": "// Car Repair //",
+    "text1": "Car repair on installment",
+    "text2": "Roadside assistance",
+    "text3": "Top quality auto parts",
+    "btn": "Learn more"
+  },
+  "hero": {
+    "text": "Our Services",
+    "title": "Explore Our Services",
+    "text1": "Auto Electrician",
+    "text2": "Auto Mechanic",
+    "text3": "Mobile Car Repair",
+    "text4": "Tire Repair Service",
+    "text5": "Car Unlocking"
+  },
+  "service": {
+    "toptext": "// About Us //",
+    "title": "- The Best Place to Take Care of Your Car",
+    "text": "We provide high-quality car repair services with many years of experience and professionalism.",
+    "subtitle1": "Professionals and Experts",
+    "subtitle2": "Quality Service Center",
+    "subtitle3": "Awarded Employees",
+    "text1": "Our specialists have a high level of qualification and professionalism.",
+    "text2": "We guarantee high-quality service for every client.",
+    "text3": "Our employees have been awarded multiple times for their work.",
+    "btn": "Contact"
+  },
+  "result": {
+    "text1": "Years of experience",
+    "text2": "Expert technicians",
+    "text3": "Satisfied clients",
+    "text4": "Completed projects"
+  },
+  "xizmat": {
+    "left1": "Diagnostics",
+    "left2": "Engine Service",
+    "left3": "Tire Replacement",
+    "left4": "Oil Change",
+    "title": "15 Years of Experience in Auto Service",
+    "text1": "We provide high-quality diagnostics for your vehicle using the latest technologies and equipment.",
+    "text2": "Our specialists are ready to offer comprehensive engine service to ensure your vehicle always performs at its best.",
+    "text3": "We offer professional tire replacement to keep your vehicle safe on the road in any weather conditions.",
+    "text4": "We provide fast and quality oil changes to ensure your engine runs smoothly and efficiently.",
+    "bottom1": "Quality Service",
+    "bottom2": "Experienced Specialists",
+    "bottom3": "Modern Equipment"
+  },
+  "contact": {
+    "toptext": "// Contact Us //",
+    "title": "Contact Us for Any Questions",
+    "left": "// Booking //",
+    "rigtht": "// General Inquiries //"
+  },
+  "form": {
+    "text": "Contact Us",
+    "pl1": "First Name",
+    "pl2": "Last Name",
+    "pl3": "Phone Number",
+    "pl4": "Message",
+    "btn": "Send",
+    "btn1": "Sending...",
+    "btn2": "Sent!!!",
+    "error1": "First name is required",
+    "error2": "Last name is required",
+    "error3": "Phone number is required",
+    "error4": "Numbers only"
+  },
+
+  "footer": {
+    "address": {
+      "title": "Address",
+      "full": "Yakkasaroy Street,\nTashkent, Uzbekistan,\nLandmark: Opposite Navruz Wedding Hall"
+    },
+    "hours": {
+      "title": "Working Hours",
+      "schedule": "Monday - Sunday:\n24/7"
+    },
+    "services": {
+      "title": "Services",
+      "items": {
+        "diagnostics": "Diagnostics",
+        "engine": "Engine Service",
+        "spike": "Spike Replacement",
+        "oil": "Oil Change",
+        "lathe": "Lathe Service",
+        "tinting": "Tinting",
+        "motorist": "Motorist",
+        "castapra": "Castapra",
+        "vacuum": "Vacuum Cleaning",
+        "electrician": "Auto Electrician",
+        "mechanic": "Auto Mechanic"
+      }
+    },
+    "contacts": {
+      "title": "Contacts",
+      "button": "Call a Master"
+    },
+    "copyright": "Auto Service. All rights reserved."
+  }
+}

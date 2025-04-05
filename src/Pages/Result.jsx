@@ -1,8 +1,13 @@
 import React from "react";
 import onix from "../assets/onix.jpg";
 import { FaCar, FaCheck, FaUsers, FaUsersCog } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 function Result() {
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
   return (
     <div>
       <div
@@ -22,28 +27,28 @@ function Result() {
               <FaCheck className=" z-2 text-4xl text-white" />
               <div className=" z-2 text-white  text-4xl font-bold">15</div>
               <div className=" z-2 text-white font-medium text-md">
-                Лет опыта
+                {t("result.text1")}
               </div>
             </li>
             <li className="flex flex-col gap-2 items-center">
               <FaUsersCog className=" z-2 text-4xl text-white" />
               <div className=" z-2 text-white  text-4xl font-bold">20</div>
               <div className=" z-2 text-white font-medium text-md">
-                Экспертных техников
+                {t("result.text2")}
               </div>
             </li>
             <li className="flex flex-col gap-2 items-center">
-              <FaUsers  className=" z-2 text-4xl text-white" />
+              <FaUsers className=" z-2 text-4xl text-white" />
               <div className=" z-2 text-white  text-4xl font-bold">1000</div>
               <div className=" z-2 text-white font-medium text-md">
-                Довольных клиентов
+                {t("result.text3")}
               </div>
             </li>
             <li className="flex flex-col gap-2 items-center">
               <FaCar className=" z-2 text-4xl text-white" />
               <div className=" z-2 text-white  text-4xl font-bold">500</div>
               <div className=" z-2 text-white font-medium text-md">
-                Выполненных проектов
+                {t("result.text4")}
               </div>
               {/* <FaUsersCog /> */}
             </li>
