@@ -58,7 +58,10 @@ function Home() {
               <div className="absolute bg-[#00000067] w-full h-full"></div>
               <div className="container z-1 px-10 flex justify-center md:justify-between items-center">
                 <div className="text-white flex flex-col items-center md:items-start gap-5">
-                  <p className="text-md text-center md:text-left md:text-xl font-bold">
+                  <p
+                    data-aos="fade-right"
+                    data-aos-delay="100"
+                   className="text-md text-center md:text-left md:text-xl font-bold">
                     {t("home.title")}
                   </p>
                   <h1
@@ -72,6 +75,8 @@ function Home() {
                       : t("home.text1")}
                   </h1>
                   <a
+                    data-aos="fade-right"
+                    data-aos-delay="200"
                     onClick={openModal}
                     href="#"
                     className="flex items-center justify-center gap-2 w-40 py-2 bg-red-600"
