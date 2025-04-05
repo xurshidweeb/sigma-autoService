@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FaMapMarkerAlt,
   FaClock,
@@ -17,12 +17,21 @@ import {
 import { RiTelegramLine } from "react-icons/ri";
 import { useTranslation } from "react-i18next"; // ✅ TIL QO‘SHILDI
 import bg from "../assets/tracker.jpg";
+import Aos from "aos";
 
 function Footer() {
-  const { t } = useTranslation(); // ✅
+  const { t } = useTranslation();
+  useEffect(() => {
+     Aos.init({
+       duration: 1000,
+       once: false,
+     });
+   }, []);
 
   return (
     <div 
+    data-aos="fade-up"
+    data-aos-duration="2000"
       className="mt-20 bg-cover bg-center bg-fixed text-white p-10 font-sans"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(${bg})`

@@ -62,7 +62,7 @@ function Xizmatlar() {
   return (
     <div id="xizmatlar" className="container flex flex-col md:flex-row p-5 gap-5">
       {/* Left side - Service buttons */}
-      <div className="w-full md:w-1/4 flex flex-col gap-4">
+      <div data-aos="fade-right" className="w-full md:w-1/4 flex flex-col gap-4">
         {services.map((service) => (
           <button
             key={service.id}
@@ -79,14 +79,17 @@ function Xizmatlar() {
       </div>
 
       {/* Right side - Service details */}
-      <div className="w-full md:w-3/4 flex flex-col md:flex-row gap-5">
+      <div  className="w-full md:w-3/4 flex flex-col md:flex-row gap-5">
         <img
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
           src={selectedService.image}
           alt={t(`xizmat.${selectedService.titleKey}`)}
           className="w-full md:w-1/2 h-110 object-cover shadow-lg"
         />
         
-        <div className="w-full md:w-1/2">
+        <div data-aos="fade-left" className="w-full md:w-1/2">
           <h2 className="text-4xl font-bold text-gray-900">
             {t("xizmat.title")}
           </h2>

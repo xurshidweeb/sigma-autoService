@@ -23,7 +23,7 @@ function Home() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: true,
+      once: false,
     });
   }, []);
   const { t, i18n } = useTranslation();
@@ -76,7 +76,7 @@ function Home() {
                   </h1>
                   <a
                     data-aos="fade-right"
-                    data-aos-delay="200"
+                    data-aos-delay="300"
                     onClick={openModal}
                     href="#"
                     className="flex items-center justify-center gap-2 w-40 py-2 bg-red-600"
