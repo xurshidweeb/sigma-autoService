@@ -45,7 +45,7 @@ function Home() {
                 width: "100%",
                 height: "120vh",
               }}
-              className="flex items-center relative aos-init aos-animate"
+              className="flex items-center relative "
             >
               <div className="absolute bg-[#00000067] w-full h-full"></div>
               <div className="container z-1 px-10 flex justify-center md:justify-between items-center">
@@ -67,11 +67,9 @@ function Home() {
                       : t("home.text1")}
                   </h1>
                   <a
-                    data-aos="fade-right"
-                    data-aos-delay="300"
                     onClick={openModal}
                     href="#"
-                    className="flex items-center justify-center gap-2 w-40 py-2 bg-red-600"
+                    className="flex items-center justify-center gap-2 w-40 py-2 bg-red-600 mt-5"
                   >
                     {t("home.btn")}
                     <FaArrowRight />

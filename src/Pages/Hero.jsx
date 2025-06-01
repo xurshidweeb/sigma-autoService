@@ -1,165 +1,44 @@
-import "aos/dist/aos.css";
-import React from "react";
-import { useTranslation } from "react-i18next";
-import {
-  FaCarAlt,
-  FaCarBattery,
-  FaCarCrash,
-  FaTired,
-  FaTools,
-  FaUnlockAlt,
-} from "react-icons/fa";
+import { useTranslation } from 'react-i18next'
+import { FaCarAlt, FaCarBattery, FaCarCrash, FaTools, FaUnlockAlt } from 'react-icons/fa'
+
+const base = [
+  { icon: <FaCarBattery className="text-red-500 text-3xl md:text-4xl" />, text: 'hero.text1' },
+  { icon: <FaTools className="text-red-500 text-3xl md:text-4xl" />, text: 'hero.text2' },
+  { icon: <FaCarCrash className="text-red-500 text-3xl md:text-4xl" />, text: 'hero.text3' },
+  { icon: <FaUnlockAlt className="text-red-500 text-3xl md:text-4xl" />, text: 'hero.text4' },
+  { icon: <FaCarAlt className="text-red-500 text-3xl md:text-4xl" />, text: 'hero.text5' },
+  { icon: <FaUnlockAlt className="text-red-500 text-3xl md:text-4xl" />, text: 'hero.text4' },
+  { icon: <FaCarAlt className="text-red-500 text-3xl md:text-4xl" />, text: 'hero.text5' },
+  { icon: <FaCarCrash className="text-red-500 text-3xl md:text-4xl" />, text: 'hero.text3' },
+  { icon: <FaUnlockAlt className="text-red-500 text-3xl md:text-4xl" />, text: 'hero.text4' },
+  { icon: <FaCarAlt className="text-red-500 text-3xl md:text-4xl" />, text: 'hero.text5' },
+]
 
 function Hero() {
-  const { t, i18n } = useTranslation();
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
+  const { t } = useTranslation()
+
   return (
     <div>
       <div className="">
-        <div className="container px-10 pt-10">
-          <p className="font-medium text-red-500 text-center ">
-           // {t("hero.text")} //
-          </p>
-          <h1 className="text-4xl text-center font-bold pb-4">
-            {t("hero.title")}
-          </h1>
+        <div className="container px-[0.5rem] md:px-10 pt-10">
+          <p className="font-medium text-red-500 text-center ">// {t('hero.text')} //</p>
+          <h1 className="text-4xl text-center font-bold text-white pb-6">{t('hero.title')}</h1>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-            <div
-              data-aos="fade-up"
-              className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100"
-            >
-              <FaCarBattery className="text-red-500 text-3xl md:text-4xl" />
-              <p className="text-md md:text-xl font-medium">{t("hero.text1")}</p>
-            </div>
-            <div
-              data-aos="fade-up"
-              data-aos-delay="400"
-              className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100"
-            >
-              <FaTools className="text-red-500 text-3xl md:text-4xl" />
-              <p className="text-md md:text-xl font-medium">{t("hero.text2")}</p>
-            </div>
-            <div
-              data-aos="fade-up"
-              className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100"
-            >
-              <FaCarCrash className="text-red-500 text-3xl md:text-4xl" />
-              <p className="text-md md:text-xl font-medium">
-                {t("hero.text3")}
-              </p>
-            </div>
-            <div
-              data-aos="fade-up"
-              data-aos-delay="400"
-              className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100"
-            >
-              <FaUnlockAlt className="text-red-500 text-3xl md:text-4xl" />
-              <p className="text-md md:text-xl font-medium">
-                {t("hero.text4")}
-              </p>
-            </div>
-            <div
-              data-aos="fade-up"
-              className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100"
-            >
-              <FaCarAlt className="text-red-500 text-3xl md:text-4xl" />
-              <p className="text-md md:text-xl font-medium">
-                {t("hero.text5")}
-              </p>
-            </div>
-            <div
-              data-aos="fade-up"
-              className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100"
-            >
-              <FaCarBattery className="text-red-500 text-3xl md:text-4xl" />
-              <p className="text-md md:text-xl font-medium">{t("hero.text1")}</p>
-            </div>
-            <div
-              data-aos="fade-up"
-              data-aos-delay="400"
-              className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100"
-            >
-              <FaTools className="text-red-500 text-3xl md:text-4xl" />
-              <p className="text-md md:text-xl font-medium">{t("hero.text2")}</p>
-            </div>
-            <div
-              data-aos="fade-up"
-              className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100"
-            >
-              <FaCarCrash className="text-red-500 text-3xl md:text-4xl" />
-              <p className="text-md md:text-xl font-medium">
-                {t("hero.text3")}
-              </p>
-            </div>
-            <div
-              data-aos="fade-up"
-              data-aos-delay="400"
-              className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100"
-            >
-              <FaUnlockAlt className="text-red-500 text-3xl md:text-4xl" />
-              <p className="text-md md:text-xl font-medium">
-                {t("hero.text4")}
-              </p>
-            </div>
-            <div
-              data-aos="fade-up"
-              className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100"
-            >
-              <FaCarAlt className="text-red-500 text-3xl md:text-4xl" />
-              <p className="text-md md:text-xl font-medium">
-                {t("hero.text5")}
-              </p>
-            </div>
-            <div
-              data-aos="fade-up"
-              className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100"
-            >
-              <FaCarBattery className="text-red-500 text-3xl md:text-4xl" />
-              <p className="text-md md:text-xl font-medium">{t("hero.text1")}</p>
-            </div>
-            <div
-              data-aos="fade-up"
-              data-aos-delay="400"
-              className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100"
-            >
-              <FaTools className="text-red-500 text-3xl md:text-4xl" />
-              <p className="text-md md:text-xl font-medium">{t("hero.text2")}</p>
-            </div>
-            <div
-              data-aos="fade-up"
-              className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100"
-            >
-              <FaCarCrash className="text-red-500 text-3xl md:text-4xl" />
-              <p className="text-md md:text-xl font-medium">
-                {t("hero.text3")}
-              </p>
-            </div>
-            <div
-              data-aos="fade-up"
-              data-aos-delay="400"
-              className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100"
-            >
-              <FaUnlockAlt className="text-red-500 text-3xl md:text-4xl" />
-              <p className="text-md md:text-xl font-medium">
-                {t("hero.text4")}
-              </p>
-            </div>
-            <div
-              data-aos="fade-up"
-              className="flex items-center gap-4 justify-center md:justify-start h-25 p-8 bg-gray-100"
-            >
-              <FaCarAlt className="text-red-500 text-3xl md:text-4xl" />
-              <p className="text-md md:text-xl font-medium">
-                {t("hero.text5")}
-              </p>
-            </div>
+            {base.map((item, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-4 justify-center md:justify-start h-20 p-5 bg-gray-100/30 rounded-md"
+              >
+                {item.icon}
+                <p className="text-md md:text-xl font-medium">{t(item.text)}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Hero;
+export default Hero

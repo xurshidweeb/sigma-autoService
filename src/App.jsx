@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import Homes from "./Components/Homes";
+import React, { useEffect } from 'react'
+import Header from './Components/Header'
+import Footer from './Components/Footer'
+import Homes from './Components/Homes'
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Homes />
       <Footer />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
