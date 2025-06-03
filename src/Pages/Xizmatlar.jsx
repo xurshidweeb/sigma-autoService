@@ -91,13 +91,13 @@ function Xizmatlar() {
         />
 
         <div className="w-full md:w-1/2">
-          <h2 className="text-4xl font-bold text-gray-900">{t('xizmat.title')}</h2>
+          <h2 className="text-4xl font-bold text-white">{t('xizmat.title')}</h2>
 
-          <p className="mt-2 text-2xl text-gray-700">
+          <p className="mt-2 text-2xl text-gray-300">
             {t(`xizmat.${selectedService.descriptionKey}`)}
           </p>
 
-          <ul className="mt-4 space-y-2">
+          <ul className="mt-4 space-y-2 text-gray-500">
             {selectedService.benefits.map((benefitKey, index) => (
               <li key={index} className="flex items-center gap-2">
                 <FaCheck className="text-green-600" />
